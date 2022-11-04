@@ -8,7 +8,7 @@ def GetEmpName():
     empname = input("Enter employee name (END to terminate): ")
     return empname
 
-#THIS IS NEW CODE BELOW
+# THIS IS NEW CODE BELOW
 # write the code to input fromdate and todate and return the values from the function
 # prompt user for the dates in the following format: mm/dd/yyyy
 # no validation needed for this input, assumption is dates are entered correctly
