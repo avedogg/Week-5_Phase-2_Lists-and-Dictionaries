@@ -55,11 +55,11 @@ def printinfo(EmDetailList):
 
     for EmpList in EmpDetailList:
         fromdate = EmpList[0]
-        todate = EmpList[0]
-        empname = EmpList[0]
-        hours = EmpList[0]
-        hourlyrate = EmpList[0]
-        taxrate = EmpList[0]
+        todate = EmpList[1]
+        empname = EmpList[2]
+        hours = EmpList[3]
+        hourlyrate = EmpList[4]
+        taxrate = EmpList[5]
         
         grosspay, incometax, netpay = CalcTaxAndNetPay(hours, hourlyrate, taxrate)
         print(fromdate, todate, empname, f"{hours:,.2f}",  f"{hourlyrate:,.2f}", f"{grosspay:,.2f}",  f"{taxrate:,.1%}",  f"{incometax:,.2f}",  f"{netpay:,.2f}")
@@ -73,7 +73,7 @@ def printinfo(EmDetailList):
         # we must also write code to assign TotHours, TotGrossPay, TotTax, & TotNetPay to corresponding dictionary items
 
         EmpTotals["TotEmp"] = TotEmployees
-        HrsTotals["TotHrs"] = TotHrs
+        HrsTotals["TotHrs"] = TotHours
         GrossPayTotals["TotGrossPay"] = TotGrossPay
         TaxTotals["TotTax"] = TotTax
         NetPayTotals["TotNetPay"] = TotNetPay
@@ -97,10 +97,10 @@ def printinfo(EmDetailList):
 def PrintTotals(EmpTotals):
     print()
     print(f'Total Number of Employees: {EmpTotals["TotEmp"]}')
-    print(f'Total Number of Hours: {HrsTotals["TotHrs"]}')
-    print(f'Total Gross Pay: {GrossPayTotals["TotGrossPay"]}')
-    print(f'Total Tax: {TaxTotals["TaxTot"]}')
-    print(f'Total Net Pay: {NetPayTotals [TotNetPay"]}')
+    print(f'Total Number of Hours: {HrsTotals["TotHrs:,.2f"]}')
+    print(f'Total Gross Pay: {GrossPayTotals["TotGrossPay:,.2f"]}')
+    print(f'Total Tax: {TaxTotals["TotTax:,.2f"]}')
+    print(f'Total Net Pay: {NetPayTotals [TotNetPay:,.2f"]}')
  
 
 if __name__ == "__main__":
@@ -136,10 +136,9 @@ if __name__ == "__main__":
         #printinfo(empname, hours, hourlyrate, grosspay, taxrate, incometax, netpay)
 
         # write code to insert fromdate, todate, empname, hourlyrate, and taxrate into list EmpDetail
-        EmpDetail = [fromdate, todate, empname,hourlyrate, taxrate]
+        EmpDetail = [fromdate, todate, empname, hours, hourlyrate, taxrate]
 
-        printinfo(fromdate, todate, empname, hours, hourlyrate, taxrate)
-
+        
         #the NEW code below appends the list EmpDetail to the list EmpDetailList
         EmpDetailList.append(EmpDetail)
 
