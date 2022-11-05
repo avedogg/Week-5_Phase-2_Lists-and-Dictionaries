@@ -15,8 +15,9 @@ def GetEmpName():
 
 def GetDatesWorked():
     fromdate = input("Enter Start Date (mm/dd/yyyy): ")
-    todate = input ("Enter End Date (mm/dd/yyyy): ")
-    return datesworked
+    todate = input("Enter End Date (mm/dd/yyyy): ")
+    return fromdate, todate
+
     
 def GetHours():
     hours = float(input("Enter hours worked: "))
@@ -71,12 +72,13 @@ def printinfo(EmDetailList):
          
         # the following NEW line of code assigns TotEmployees totals to dictionary
         # we must also write code to assign TotHours, TotGrossPay, TotTax, & TotNetPay to corresponding dictionary items
+        #
 
         EmpTotals["TotEmp"] = TotEmployees
-        HrsTotals["TotHrs"] = TotHours
-        GrossPayTotals["TotGrossPay"] = TotGrossPay
-        TaxTotals["TotTax"] = TotTax
-        NetPayTotals["TotNetPay"] = TotNetPay
+        EmpTotals["TotHours"] = TotHours
+        EmpTotals["TotGrossPay"] = TotGrossPay
+        EmpTotals["TotTax"] = TotTax
+        EmpTotals["TotNetPay"] = TotNetPay
        
 
 # COMMENT OUT THE CODE BELOW
@@ -97,10 +99,10 @@ def printinfo(EmDetailList):
 def PrintTotals(EmpTotals):
     print()
     print(f'Total Number of Employees: {EmpTotals["TotEmp"]}')
-    print(f'Total Number of Hours: {HrsTotals["TotHrs:,.2f"]}')
-    print(f'Total Gross Pay: {GrossPayTotals["TotGrossPay:,.2f"]}')
-    print(f'Total Tax: {TaxTotals["TotTax:,.2f"]}')
-    print(f'Total Net Pay: {NetPayTotals [TotNetPay:,.2f"]}')
+    print(f'Total Number of Hours: {EmpTotals["TotHours:,.2f"]}')
+    print(f'Total Gross Pay: {EmpTotals["TotGrossPay:,.2f"]}')
+    print(f'Total Tax: {EmpTotals["TotTax:,.2f"]}')
+    print(f'Total Net Pay: {EmpTotals["TotNetPay:,.2f"]}')
  
 
 if __name__ == "__main__":
@@ -155,5 +157,3 @@ if __name__ == "__main__":
     
     printinfo(EmpDetailList)
     PrintTotals(EmpTotals)
-
-
