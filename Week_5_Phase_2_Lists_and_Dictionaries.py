@@ -99,10 +99,10 @@ def printinfo(EmDetailList):
 def PrintTotals(EmpTotals):
     print()
     print(f'Total Number of Employees: {EmpTotals["TotEmp"]}')
-    print(f'Total Number of Hours: {EmpTotals["TotHours:,.2f"]}')
-    print(f'Total Gross Pay: {EmpTotals["TotGrossPay:,.2f"]}')
-    print(f'Total Tax: {EmpTotals["TotTax:,.2f"]}')
-    print(f'Total Net Pay: {EmpTotals["TotNetPay:,.2f"]}')
+    print(f'Total Number of Hours: {EmpTotals["TotHours"]}')
+    print(f'Total Gross Pay: {EmpTotals["TotGrossPay"]}')
+    print(f'Total Tax: {EmpTotals["TotTax"]}')
+    print(f'Total Net Pay: {EmpTotals["TotNetPay"]}')
  
 
 if __name__ == "__main__":
